@@ -1,0 +1,196 @@
+/*
+Theme Name:   PauseCollection
+Description:  Pause Collection is custom theme (child theme of storefront) for a Taiwanese shop named Pause Collection.
+Author:       Louis
+Author URL:   https://louislee.best/
+Template:     storefront
+Version:      1.3
+License:      GNU General Public License v2 or later
+License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:  PauseCollection
+*/
+// home page template
+.page-template-homepage-template{
+	section.masthead {
+		min-height: 50vh;
+		margin-bottom: 3rem;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		text-align: center;
+		color: white;
+		display: grid;
+		justify-content: center;
+		align-items: center;
+		h3 {
+			color: white;
+			font-size: 200%;
+		}
+	}
+	.siema-container {
+		position: relative;
+		margin: 2rem auto;
+		img {
+			width: 100%;
+			max-height: 60vh;
+			object-fit: cover;
+		}
+	}
+	.wc-block-featured-category{
+		border-radius: 10px;
+		&::before{
+			border-radius: 10px;
+		}
+	}
+	.wc-block-featured-product{
+		border-radius: 10px;
+		&::before{
+			border-radius: 10px;
+		}
+	}
+}
+
+//override parent style
+.home.blog .site-header,
+.home.page:not(.page-template-template-homepage) .site-header,
+.home.post-type-archive-product .site-header {
+	margin-bottom: 0px;
+}
+.woocommerce-active
+{
+	.site-header{
+		.site-branding {
+			width: 40%;
+			float: none;
+			margin-right: 4.347826087%;
+		}
+
+	}
+}
+
+.storefront-breadcrumb {
+	padding: 1.41575em 0;
+	margin: 0px;
+}
+
+
+//main nav
+#masthead{
+	.col-full{
+		display: flex;
+		justify-content: space-between;
+		&::before{
+			display: none;
+		}
+		&::after{
+			display: none;
+		}
+		.branding-right{
+			#site-header-account{
+				color: #333333;
+				&:hover{
+					color: #747474;
+				}
+				&::before{
+					font-style: normal;
+					font-variant: normal;
+					font-weight: normal;
+					line-height: 1;
+					font-family: 'Font Awesome 5 Free';
+					font-weight: 900;
+					line-height: inherit;
+					vertical-align: baseline;
+					content: "\f007";
+					height: 1em;
+					line-height: 1.618;
+					margin-right: 0.5em;
+
+				}
+			}
+			#site-header-cart {
+				width: 200px;
+				text-align: end;
+				margin-right: 10px;
+			}
+			@media screen and (max-width: 600px) {
+				display: none;
+			}
+		}
+	}
+}
+
+
+a.cart-contents:hover,
+.site-header-cart .widget_shopping_cart a:hover,
+.site-header-cart:hover > li > a {
+	color: #747474;
+}
+.storefront-primary-navigation{
+	&>.col-full{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.site-search{
+			margin: 0px;
+			@media screen and (max-width: 600px) {
+				display: none;
+			}
+		}
+	}
+}
+
+// products in archive page
+.woocommerce-LoopProduct-link {
+	position: relative;
+	.onsale {
+		position: absolute;
+		top: 0;
+		left: 0;
+		color: rgb(255, 0, 85);
+		border: none;
+	}
+	img {
+		margin-bottom: 0.5em;
+	}
+}
+.woocommerce-active{
+	.site-header{
+		.site-branding{
+			//width: 100%;
+		}
+		.site-search {
+			width: auto;
+			float: none;
+			margin-right: 0;
+			clear: none;
+			display: inline-block;
+		}
+		.site-header-cart{
+			//width: auto;
+			float: none;
+			margin-right: 0;
+			clear: none;
+			display: inline-block;
+			.cart-contents{
+				&::after{
+					content: "";
+				}
+				&::before{
+					font-style: normal;
+					font-variant: normal;
+					font-weight: normal;
+					line-height: 1;
+					font-family: 'Font Awesome 5 Free';
+					font-weight: 900;
+					line-height: inherit;
+					vertical-align: baseline;
+					content: "\f291";
+					height: 1em;
+					line-height: 1.618;
+					margin-right: 0.5em;
+
+				}
+			}
+		}
+	}
+}
